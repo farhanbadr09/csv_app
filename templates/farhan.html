@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Login - Brand</title>
+    <meta name="description" content="Meet businesses and get products for free. Sign up in minutes! Let's Collaborate">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aguafina+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alatsi">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+SC">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <link rel="stylesheet" href="../static/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="../static/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="../static/css/responsive_image_grid_12073_SaraSantos.css">
+    <link rel="stylesheet" href="../static/css/smoothproducts.css">
+    <link rel="stylesheet" href="../static/css/timeline_12073_SaraSantos.css">
+    <link rel="shortcut icon" href="../static/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="../static/style.css">
+
+    <style>
+        /* .img-preview {
+            width: 256px;
+            height: 256px;
+            position: relative;
+            border: 5px solid #F8F8F8;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+         */
+        /* .img-preview>div {
+            width: 100%;
+            height: 100%;
+            background-size: 256px 256px;
+            background-repeat: no-repeat;
+            background-position: center;
+        } */
+        
+        .upload-label {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            color: blue;
+            border: 1px solid blue;
+            border-radius: 20px;
+            font-size: 1em;
+            transition: all .4s;
+            cursor: pointer;
+        }
+        
+        #btn-predict {
+            display: inline-block;
+            padding: 10px 25px;
+            background: transparent;
+            background-color: rgb(93, 93, 173);
+            border: 1px solid rgb(93, 93, 173);
+            border-radius: 20px !important;
+            font-size: 1em;
+            transition: all .4s;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div style="background-color: rgb(219, 219, 219);">
+
+                    <form action="/uploadcsv" name="uploadcsv" id="uploadcsv" method="post" enctype="multipart/form-data">
+                        <div class="row mb-5">
+
+                            <div class="mt-3 ml-md-5 p-3 text-center " style="border: 1px solid white; border-radius: 10%;">
+                                <label id="upload" for="imageUpload" onclick="display()" class="upload-label ml-4">
+                                    Upload file
+                                </label>
+
+                                <div class="mt-2 invisible border-0" id="show">
+                                    <input type="file" class="d-none" id="imageUpload" name="csv" accept=".csv" onchange="as();" required>
+
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>
+                    </form>
+                    <div class="mt-3  ">
+                        <div class="" style="border: 1px solid grey;">
+
+                            <h3 class="text-center">Your Queries</h3>
+                        </div>
+                        <div class="mt-1" style="border: 1px solid grey;">
+                            <h4 class="ml-2">Issues</h4>
+                            <div><a class="ml-2" href="">Create New</a></div>
+                            <div> <a class="ml-2" href="">Show unassigned</a></div>
+                            <div><a class="ml-2" href="">Mainfest List</a></div>
+
+
+                            <div>
+                                <p class="ml-2">Filter:</p>
+                                <div class="container-fluid">
+                                    <div class="row m-2">
+                                        <div class="col-md-6">
+                                            <input class="form-control" type="text" value="show">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input class="form-control" type="text" class="bg-white">
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="mt-1 ">
+
+                        <div class="mt-1" style="border: 1px solid grey;">
+                            <h4 class="ml-2 pt-2">Keywords</h4>
+                            <div><a class="ml-2" href="">Create New</a></div>
+
+
+
+
+                        </div>
+
+                    </div>
+                    <div class="">
+
+                        <div class=" mt-1 " style="border: 1px solid grey; ">
+                            <h4 class="ml-2 mt-2">Administration</h4>
+                            <div><a class="ml-2 " href=" ">Class list</a></div>
+                            <div> <a class="ml-2 " href=" ">User list</a></div>
+                            <div><a class="ml-2 " href=" ">Add List</a></div>
+
+
+
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="">
+
+                        <div class=" mt-1 mb-3" style="border: 1px solid grey; ">
+                            <h4 class="ml-2 mt-2">hello , Andrew</h4>
+                            <div><a class="ml-2 " href=" ">Class list</a></div>
+                            <div> <a class="ml-2 " href=" ">User list</a></div>
+                            <div><a class="ml-2 " href=" ">Add List</a></div>
+
+
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-9 ">
+                {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+                <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                    <span>{{ message }}</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                </div>
+                {% endfor %} {% endif %} {% endwith %}
+                <div class="p-4 " style="background-color: rgb(219, 219, 219); ">
+                    <div class="container-fluid ">
+                        <form action="/uploadflight" method="post">
+                            <div class="row ">
+                                <div class="col-md-4 ">
+
+                                    <div class="form-group "><label for="Cname ">Fight Name:*</label>
+                                        <div> <select id="select" class="form-control " onchange="getprice() " name="flight" required>
+                            <option   value=" ">-- Select --</option>  
+                            {% for i in record %}   
+                            <option   value="{{i}}">{{i}}</option> 
+                            {% endfor %}
+
+                        
+    
+                        </select> </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <div class="form-group "><label for="MAWB">MAWB: *</label> <input id="MAWB" type="text" class="form-control bg-white " style="border-radius: 1px; color: black; " name="MAWB"></div>
+
+                                </div>
+                                <div class="col-md-4 ">
+                                    <div class="form-group "><label for="EAT ">EAT: *</label> <input id="EAT" class="form-control bg-white " type="text" style="border-radius: 1px; color: black; " name="EAT"></div>
+
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-group "> <textarea name="Remarks" id="Remarks" class="form-control " cols="30 " placeholder="Remarks" rows="3 "></textarea></div>
+
+                            </div>
+                            <div class="container mt-md-3 mb-4 mt-4 ">
+                                <button type="button" onclick="sub()" id="btn-predict" class="btn  btn-primary">
+                                  Submit
+                                </button>
+                                <button class="btn btn-primary  " type="submit">Save</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div style="overflow-x:auto;">
+                    <table class="table table-bordered">
+                        <thead>
+
+                            <tr>
+                                {% for j in c %}
+
+                                <th>{{a[0][j]}}</th>
+                                {% endfor %}
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            {% for i in c2 %}
+                            <tr>{% for j in c %} {% if i == 0 %}
+                                <td class="d-none">{{a[i][j]}}</td>
+                                {% else %}
+                                <td>{{a[i][j]}}</td>
+                                {% endif %} {% endfor %}
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        function sub(params) {
+
+            $("#uploadcsv").submit();
+
+        }
+
+        function display(params) {
+
+
+        }
+
+        function as(input) {
+            document.getElementById("upload").innerHTML = "File Uploaded"
+        }
+    </script>
+    <script src="../static/bootstrap/js/popper.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/js/main.js"></script>
+
+</body>
+
+
+</html>
